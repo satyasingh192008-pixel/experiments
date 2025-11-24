@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Attendance Sheet</title>
+    <style>
+        :root{
+            --accent:#2b6cb0;
+            --light:#f7fafc;
+            --muted:#667085;
+        }
+        body{
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: #f3f6fb;
+            padding: 32px;
+            color:#0f172a;
+        }
+
+        .attendance{
+            width: 880px;
+            max-width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+            background: white;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        /* top heading that uses colspan to span all columns */
+        .attendance th.sheet-title{
+            background: linear-gradient(90deg,var(--accent),#285e8f 70%);
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 14px 18px;
+            letter-spacing: .4px;
+        }
+
+        .attendance th, .attendance td{
+            border-bottom: 1px solid #e6eef8;
+            padding: 10px 12px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 0.95rem;
+        }
+
+        .attendance thead th.header{
+            background: var(--light);
+            color: var(--muted);
+            font-weight: 600;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .attendance tbody tr:nth-child(odd){
+            background: #ffffff;
+        }
+        .attendance tbody tr:nth-child(even){
+            background: #fbfdff;
+        }
+
+        .student-name{
+            text-align: left;
+            padding-left: 16px;
+            font-weight: 600;
+            color:#0b1a2b;
+            width: 220px;
+        }
+
+        input[type="checkbox"]{
+            width: 18px;
+            height: 18px;
+            transform: translateY(1px);
+        }
+
+        caption{
+            caption-side: bottom;
+            padding: 8px 0 16px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width:720px){
+            .attendance{
+                font-size: 14px;
+            }
+            .attendance th.sheet-title{ font-size: 1rem; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<table class="attendance" aria-label="Attendance sheet">
+
+    <tr>
+        <th class="sheet-title" colspan="8">Attendance Sheet</th>
+    </tr>
+
+    <thead>
+        <tr>
+            <th class="header">Student</th>
+            <th class="header">Day 1</th>
+            <th class="header">Day 2</th>
+            <th class="header">Day 3</th>
+            <th class="header">Day 4</th>
+            <th class="header">Day 5</th>
+            <th class="header">Day 6</th>
+            <th class="header">Day 7</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td class="student-name">satya</td>
+            <td><input type="checkbox" name="satya-d1" aria-label="satya Day 1"></td>
+            <td><input type="checkbox" name="satya-d2" aria-label="satya Day 2"></td>
+            <td><input type="checkbox" name="satya-d3" aria-label="satya Day 3"></td>
+            <td><input type="checkbox" name="satya-d4" aria-label="satya Day 4"></td>
+            <td><input type="checkbox" name="satya-d5" aria-label="satya Day 5"></td>
+            <td><input type="checkbox" name="satya-d6" aria-label="satya Day 6"></td>
+            <td><input type="checkbox" name="satya-d7" aria-label="satya Day 7"></td>
+        </tr>
+
+        <tr>
+            <td class="student-name">saksham</td>
+            <td><input type="checkbox" name="saksham-d1" aria-label="saksham Day 1"></td>
+            <td><input type="checkbox" name="saksham-d2" aria-label="saksham Day 2"></td>
+            <td><input type="checkbox" name="saksham-d3" aria-label="saksham Day 3"></td>
+            <td><input type="checkbox" name="saksham-d4" aria-label="saksham Day 4"></td>
+            <td><input type="checkbox" name="saksham-d5" aria-label="saksham Day 5"></td>
+            <td><input type="checkbox" name="saksham-d6" aria-label="saksham Day 6"></td>
+            <td><input type="checkbox" name="saksham-d7" aria-label="saksham Day 7"></td>
+            
+        </tr>
+
+        <tr>
+            <td class="student-name">rohit</td>
+            <td><input type="checkbox" name="rohit-d1" aria-label="rohit Day 1"></td>
+            <td><input type="checkbox" name="rohit-d2" aria-label="rohit Day 2"></td>
+            <td><input type="checkbox" name="rohit-d3" aria-label="rohit Day 3"></td>
+            <td><input type="checkbox" name="rohit-d4" aria-label="rohit Day 4"></td>
+            <td><input type="checkbox" name="rohit-d5" aria-label="rohit Day 5"></td>
+            <td><input type="checkbox" name="rohit-d6" aria-label="rohit Day 6"></td>
+            <td><input type="checkbox" name="rohit-d7" aria-label="rohit Day 7"></td>
+        </tr>
+
+        <tr>
+            <td class="student-name">akhil</td>
+            <td><input type="checkbox" name="akhil-d1" aria-label="akhil Day 1"></td>
+            <td><input type="checkbox" name="akhil-d2" aria-label="akhil Day 2"></td>
+            <td><input type="checkbox" name="akhil-d3" aria-label="akhil Day 3"></td>
+            <td><input type="checkbox" name="akhil-d4" aria-label="akhil Day 4"></td>
+            <td><input type="checkbox" name="akhil-d5" aria-label="akhil Day 5"></td>
+            <td><input type="checkbox" name="akhil-d6" aria-label="akhil Day 6"></td>
+            <td><input type="checkbox" name="akhil-d7" aria-label="akhil Day 7"></td>
+        </tr>
+
+        <tr>
+            <td class="student-name">amita</td>
+            <td><input type="checkbox" name="amita-d1" aria-label="amita Day 1"></td>
+            <td><input type="checkbox" name="amita-d2" aria-label="amita Day 2"></td>
+            <td><input type="checkbox" name="amita-d3" aria-label="amita Day 3"></td>
+            <td><input type="checkbox" name="amita-d4" aria-label="amita Day 4"></td>
+            <td><input type="checkbox" name="amita-d5" aria-label="amita Day 5"></td>
+            <td><input type="checkbox" name="amita-d6" aria-label="amita Day 6"></td>
+            <td><input type="checkbox" name="amita-d7" aria-label="amita Day 7"></td>
+        </tr>
+    </tbody>
+
+    <caption>Tick boxes for presence. Modify headings or student names as needed.</caption>
+</table>
+
+</body>
+</html>
